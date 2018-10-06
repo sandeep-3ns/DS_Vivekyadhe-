@@ -1,0 +1,23 @@
+int pairs(long k, vector<int> arr) {
+
+    int i=0;
+    int count=0;
+    int j=0;
+    sort(arr.begin(),arr.end());
+    int n=arr.size();
+    while(j<n)
+    {
+        if(arr[j]-arr[i]==k)
+        {
+            count++;
+            i++;j++;
+        }
+        else if(arr[j]-arr[i]<k)
+            j++;
+        else
+            i++;
+    }
+   
+    return count;
+    
+   }
